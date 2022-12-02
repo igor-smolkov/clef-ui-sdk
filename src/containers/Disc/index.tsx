@@ -7,7 +7,7 @@ import { getColorsByAssetID } from '../../shared/utils';
 
 type Props = {
   assetID: string;
-}
+};
 
 const Disc: FC<Props> = ({ assetID }) => {
   const [colors, setColors] = useState<SongColor[] | null>(null);

@@ -28,7 +28,7 @@ const Disc = forwardRef<HTMLDivElement, Props>(({ colors = undefined, isAnimate 
   const gradientCircleFallbackRender = useCallback(() => <DefaultCircle angle={angle} />, [angle]);
 
   return (
-    <div className={cn('clef-disc', { ['clef-disc_animate']: isAnimate })}>
+    <div className={cn('clef-disc', { 'clef-disc_animate': isAnimate })}>
       <div ref={ref} className="clef-disc__ref-container">
         <div className="clef-disc__draw-container" style={{ transform: `rotate(${angle}deg)` }}>
           <ErrorBoundary fallbackRender={gradientCircleFallbackRender}>

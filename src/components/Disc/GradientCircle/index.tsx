@@ -28,13 +28,13 @@ const GradientCircle: FC<Props> = ({ colors, onRendered }) => {
     p5.angleMode(p5.DEGREES);
     p5.translate(radius, radius);
 
-    const isMultiColor = colors.find((color) => color !== colors[0]) !== undefined;
+    const isMultiColor = colors.find(color => color !== colors[0]) !== undefined;
 
     const mainSectionColors = isMultiColor
       ? [
           songColors[colors[0]].light,
-          ...colors.slice(1, colors.length - 2).map((color) => songColors[color].middle),
-          songColors[colors[colors.length - 1]].dark,
+          ...colors.slice(1, colors.length - 2).map(color => songColors[color].middle),
+          songColors[colors[colors.length - 1]].dark
         ]
       : [songColors[colors[0]].light, songColors[colors[0]].dark];
     conicalGradient(p5, density, radius, fromAngle, fromAngle + 360 - transitionAngle, mainSectionColors);

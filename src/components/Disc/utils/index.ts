@@ -9,7 +9,7 @@ export const mapColors = (p5: p5Types, value: number, min: number, max: number, 
 
 export const polar = (p5: p5Types, cx: number, cy: number, angle: number, dist: number) => ({
   x: cx + p5.cos(angle) * dist,
-  y: cy + p5.sin(angle) * dist,
+  y: cy + p5.sin(angle) * dist
 });
 
 export const conicalGradient = (
