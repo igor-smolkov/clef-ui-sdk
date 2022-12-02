@@ -12,10 +12,11 @@ import './disc.css';
 type Props = {
   colors?: SongColor[];
   isAnimate?: boolean;
+  borderColor?: string;
   onRendered?: () => void;
 };
 
-const Disc = forwardRef<HTMLDivElement, Props>(({ colors = undefined, isAnimate = false, onRendered }, ref) => {
+const Disc = forwardRef<HTMLDivElement, Props>(({ colors = undefined, isAnimate = false, borderColor = '', onRendered }, ref) => {
   const [isRendering, setIsRendering] = useState(true);
 
   const angle = colors ? (colors.reduce((acc, color) => acc + color) / colors.length) * 360 : 0;
@@ -40,7 +41,7 @@ const Disc = forwardRef<HTMLDivElement, Props>(({ colors = undefined, isAnimate 
           </div>
         </div>
       </div>
-      <div className="clef-disc__border" />
+      {borderColor !== '' && <div className="clef-disc__border" style={{ borderColor }} />}
     </div>
   );
 });

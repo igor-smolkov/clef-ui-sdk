@@ -7,18 +7,21 @@ import { getColorsByAssetID } from '../../shared/utils';
 
 type Props = {
   assetID: string;
+  isAnimate?: boolean;
+  borderColor?: string;
+  onImageReady?: (image: string) => void;
 };
 
-const Disc: FC<Props> = ({ assetID }) => {
-  const [colors, setColors] = useState<SongColor[] | null>(null);
+const Disc: FC<Props> = ({ assetID, isAnimate = false, borderColor = '', onImageReady = undefined }) => {
+  const [colors, setColors] = useState<SongColor[]>();
   const discContainerRef = useRef<HTMLDivElement>(null);
 
   const handleRendered = async () => {
-    if (discContainerRef.current === null) return;
+    if (discContainerRef.current === null || onImageReady === undefined) return;
     try {
       const canvas = await html2canvas(discContainerRef.current, { backgroundColor: 'rgba(0, 0, 0, 0)' });
       const image = canvas.toDataURL('image/png', 0.9);
-      console.log(image);
+      onImageReady(image);
     } catch (error) {
       if (isErrorWithMessage(error)) {
         // eslint-disable-next-line no-console
@@ -50,11 +53,13 @@ const Disc: FC<Props> = ({ assetID }) => {
   }, [assetID]);
 
   return (
-    <>
-      {colors !== null && colors.length > 0 && (
-        <DiscComponent ref={discContainerRef} colors={colors} onRendered={handleRendered} />
-      )}
-    </>
+    <DiscComponent
+      ref={discContainerRef}
+      colors={colors}
+      isAnimate={isAnimate}
+      borderColor={borderColor}
+      onRendered={handleRendered}
+    />
   );
 };
 
