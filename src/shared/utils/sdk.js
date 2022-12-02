@@ -1248,13 +1248,13 @@ async function stop(Tone) {
   }
 }
 
-module.exports = {
-  COLORS:                       COLORS,
-  fetch_song_by_asset_id:       fetch_song_by_asset_id,
-  render_sheet:                 render_sheet,
-  get_song_name_by_asset_id:    get_song_name_by_asset_id,
-  get_song_colors_by_asset_id:  get_song_colors_by_asset_id,
-  set_volume:                   set_volume,
-  play_song_by_asset_id:        play_song_by_asset_id,
-  stop:                         stop
+export {
+  COLORS,
+  fetch_song_by_asset_id,
+  render_sheet,
+  get_song_name_by_asset_id,
+  get_song_colors_by_asset_id,
+  set_volume,
+  play_song_by_asset_id,
+  stop
 };
