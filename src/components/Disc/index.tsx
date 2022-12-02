@@ -10,6 +10,4 @@ const Disc: FC<Props> = ({ borderColor = '' }) => {
   return <div className="disc" style={{ borderColor }} />
 };
 
-export type { Props };
-
-export { Disc };
+export { Disc, Props };
