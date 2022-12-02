@@ -37,8 +37,10 @@ const Disc = forwardRef<HTMLDivElement, Props>(
               {(isRendering || colors === undefined) && <DefaultCircle angle={angle} />}
               {colors !== undefined && <GradientCircle colors={colors} onRendered={handleRendered} />}
             </ErrorBoundary>
-            <div className="clef-disc__note">
-              <Note />
+            <div className="clef-disc__note-container">
+              <div className="clef-disc__note">
+                <Note />
+              </div>
             </div>
           </div>
         </div>
