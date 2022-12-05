@@ -6,7 +6,7 @@ ClefDisc component and function lib for song playback control
 npm i clef-ui-sdk
 ```
 
-## Диск
+## ClefDisc
 
 Minimal example:
 
@@ -45,8 +45,11 @@ Disk size responsive from 96px to 240px
   
 ## SDK
 
-Providing functions and constants from [sdk](https://github.com/automainint/clef#sdk):
-
+Providing functions and constants from [SDK](https://github.com/automainint/clef#sdk):
+  
+Functions `play_song_by_asset_id` & `stop` partially applied.  
+No first argument `Tone`.  
+  
 - COLORS
 - fetch_song_by_asset_id
 - render_sheet
