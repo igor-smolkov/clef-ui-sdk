@@ -1,12 +1,14 @@
 # Clef UI SDK
-
+  
+ClefDisc component and function lib for song playback control  
+  
 ```bash
 npm i clef-ui-sdk
 ```
 
 ## Диск
 
-Минимальный пример:
+Minimal example:
 
 ```js
 import { ClefDisc } from 'clef-ui-sdk';
@@ -14,7 +16,7 @@ import { ClefDisc } from 'clef-ui-sdk';
 const Foo = () => <ClefDisc assetID={ASSET_ID} />;
 ```
   
-Полный функционал:
+Full example:
 
 ```ts
 import { ClefDisc } from 'clef-ui-sdk';
@@ -25,10 +27,10 @@ const Foo = () => {
 }
 ```
   
-- assetID - id ассета  
-- isAnimate - включить анимацию вращения (опционально)  
-- borderColor - цвет границы вокруг диска (опционально, по-умолчанию границы нет)  
-- onImageReady - обратный вызов, если передан, то возвращает base64 png изображение в параметре image (опционально, по-умолчанию ничего не конвертирует)
+- assetID - asset identifier  
+- isAnimate - enable rotation (optional)  
+- borderColor - disc border color (optional, no border by default)  
+- onImageReady - callback, if passed, returns the base64 png image in the `image` parameter (optional, not converted by default)
 
 ```ts
 type Props = {
@@ -39,9 +41,11 @@ type Props = {
 };
 ```
   
+Disk size responsive from 96px to 240px  
+  
 ## SDK
 
-Пробрасываются функции и константы из sdk:
+Providing functions and constants from [sdk](https://github.com/automainint/clef#sdk):
 
 - COLORS
 - fetch_song_by_asset_id
