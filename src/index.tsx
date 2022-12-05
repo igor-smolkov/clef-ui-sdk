@@ -1,8 +1,5 @@
 export { Disc as ClefDisc } from './containers';
-export {
-  partialPlaySongByAssetID as play_song_by_asset_id,
-  partialStop as stop,
-} from './shared/utils'
+export { partialPlaySongByAssetID as play_song_by_asset_id, partialStop as stop } from './shared/utils';
 export {
   COLORS,
   fetch_song_by_asset_id,

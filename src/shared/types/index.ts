@@ -12,5 +12,9 @@ export function isErrorWithMessage(error: unknown): error is Error {
   return (error as Error).message !== undefined;
 }
 
-export type ParametersWithoutFirst<T extends (first: any, ...args: any) => any> =
-  T extends (first: any, ...args: infer P) => any ? P : never;
+export type ParametersWithoutFirst<T extends (first: any, ...args: any) => any> = T extends (
+  first: any,
+  ...args: infer P
+) => any
+  ? P
+  : never;

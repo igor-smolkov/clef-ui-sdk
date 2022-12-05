@@ -11,7 +11,6 @@ import {
 const partialPlaySongByAssetID = async (...params: Required<ParametersWithoutFirst<typeof playSongByAssetID>>) =>
   playSongByAssetID(Tone, ...params);
 
-const partialStop = async (...params: Required<ParametersWithoutFirst<typeof stop>>) =>
-  stop(Tone, ...params);
+const partialStop = async (...params: Required<ParametersWithoutFirst<typeof stop>>) => stop(Tone, ...params);
 
 export { getColorsByAssetID, partialPlaySongByAssetID, partialStop, COLORS };
