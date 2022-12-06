@@ -30,6 +30,7 @@ const Foo = () => {
 - assetID - asset identifier  
 - isAnimate - enable rotation (optional)  
 - borderColor - disc border color (optional, no border by default)  
+- colors - pass array of [COLORS](https://github.com/automainint/clef#sdk) or get colors from asset if `null` or `undefined` (optional, `null` by default)
 - onImageReady - callback, if passed, returns the base64 png image in the `image` parameter (optional, not converted by default)
 
 ```ts
@@ -37,6 +38,7 @@ type Props = {
   assetID: string;
   isAnimate?: boolean;
   borderColor?: string;
+  colors?: SongColor[] | null;
   onImageReady?: (image: string) => void;
 };
 ```

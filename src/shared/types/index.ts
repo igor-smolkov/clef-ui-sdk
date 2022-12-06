@@ -13,7 +13,7 @@ export function isSongColors(colors: unknown): colors is SongColor[] {
   return (
     Array.isArray(_colors) &&
     _colors.every(
-      (color) => color === COLORS.major || color === COLORS.minor || color === COLORS.neutral || color === COLORS.weird
+      color => color === COLORS.major || color === COLORS.minor || color === COLORS.neutral || color === COLORS.weird
     )
   );
 }
