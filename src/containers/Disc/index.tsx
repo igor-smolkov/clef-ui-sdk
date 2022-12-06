@@ -1,7 +1,7 @@
 import React, { FC, useEffect, useRef, useState } from 'react';
 import html2canvas from 'html2canvas';
 
-import { isErrorWithMessage, SongColor } from '../../shared/types';
+import { isErrorWithMessage, isSongColors, SongColor } from '../../shared/types';
 import { Disc as DiscComponent } from '../../components';
 import { getColorsByAssetID } from '../../shared/utils';
 
@@ -9,11 +9,12 @@ type Props = {
   assetID: string;
   isAnimate?: boolean;
   borderColor?: string;
+  colors?: SongColor[] | null;
   onImageReady?: (image: string) => void;
 };
 
-const Disc: FC<Props> = ({ assetID, isAnimate = false, borderColor = '', onImageReady = undefined }) => {
-  const [colors, setColors] = useState<SongColor[]>();
+const Disc: FC<Props> = ({ assetID, isAnimate = false, borderColor = '', colors = null, onImageReady = undefined }) => {
+  const [songColors, setSongColors] = useState<SongColor[]>();
   const discContainerRef = useRef<HTMLDivElement>(null);
 
   const handleRendered = async () => {
@@ -34,10 +35,14 @@ const Disc: FC<Props> = ({ assetID, isAnimate = false, borderColor = '', onImage
   };
 
   useEffect(() => {
+    if (colors !== null) {
+      if (isSongColors(colors)) setSongColors(colors);
+      return;
+    }
     const fetchData = async () => {
       try {
         const data = await getColorsByAssetID(assetID);
-        setColors(data);
+        setSongColors(data);
       } catch (err) {
         if (isErrorWithMessage(err)) {
           // eslint-disable-next-line no-console
@@ -50,12 +55,12 @@ const Disc: FC<Props> = ({ assetID, isAnimate = false, borderColor = '', onImage
     };
 
     fetchData();
-  }, [assetID]);
+  }, [assetID, colors]);
 
   return (
     <DiscComponent
       ref={discContainerRef}
-      colors={colors}
+      colors={songColors}
       isAnimate={isAnimate}
       borderColor={borderColor}
       onRendered={handleRendered}
