@@ -50,7 +50,7 @@ Disk size responsive from 96px to 240px
 Providing functions from [SDK](https://github.com/automainint/clef#sdk):
   
 Function `play_song_by_asset_id` partially applied.  
-No first argument `Tone`.  
+No first argument `Tone`  
   
 - get_song_name_by_asset_id
 - set_volume
