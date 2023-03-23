@@ -10,10 +10,18 @@ type Props = {
   isAnimate?: boolean;
   borderColor?: string;
   colors?: SongColor[] | null;
+  size?: 'small' | 'normal-responsive';
   onImageReady?: (image: string) => void;
 };
 
-const Disc: FC<Props> = ({ assetID, isAnimate = false, borderColor = '', colors = null, onImageReady = undefined }) => {
+const Disc: FC<Props> = ({
+  assetID,
+  isAnimate = false,
+  borderColor = '',
+  colors = null,
+  size = 'normal-responsive',
+  onImageReady = undefined,
+}) => {
   const [songColors, setSongColors] = useState<SongColor[]>();
   const discContainerRef = useRef<HTMLDivElement>(null);
 
@@ -63,6 +71,7 @@ const Disc: FC<Props> = ({ assetID, isAnimate = false, borderColor = '', colors 
       colors={songColors}
       isAnimate={isAnimate}
       borderColor={borderColor}
+      size={size}
       onRendered={handleRendered}
     />
   );
