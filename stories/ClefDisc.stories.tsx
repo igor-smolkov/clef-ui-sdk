@@ -25,3 +25,11 @@ Default.args = {
   colors: [0, 1, 2, 3, 0, 1, 2, 3],
   onImageReady: (image: string) => console.log(image),
 };
+
+export const DefaultNoHandler = Template.bind({});
+
+DefaultNoHandler.args = {
+  assetID: 'CSB5QjKAYeY5BCK4EyLC66fKn5QWX73HAXhn4pNb9HD',
+  colors: [0, 1, 2, 3, 0, 1, 2, 3],
+  onImageReady: undefined,
+};

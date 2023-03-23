@@ -6,3 +6,6 @@ export const neutralColors = { light: '#f4aee4', middle: '#f55cb2', dark: '#ff01
 export const weirdColors = { light: '#1cee89', middle: '#18cd65', dark: '#1ba549' } as const;
 
 export const songColors = [majorColors, minorColors, neutralColors, weirdColors];
+
+export const transitionAngle = 4;
+export const angleOffset = 73;

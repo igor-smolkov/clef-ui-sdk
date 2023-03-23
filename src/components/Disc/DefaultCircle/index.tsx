@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 
-import { defaultColors } from '../constants';
+import { angleOffset, defaultColors, transitionAngle } from '../constants';
 import './defaultCircle.css';
 
 type Props = {
@@ -9,11 +9,16 @@ type Props = {
 
 const DefaultCircle: FC<Props> = ({ angle }) => {
   const defaultCircleGradient = `
-    conic-gradient(from ${angle - 77}deg, 
-    ${defaultColors.light}, ${defaultColors.dark} 355deg, ${defaultColors.light} 360deg
+    conic-gradient(from ${angle - angleOffset}deg, 
+    ${defaultColors.light}, ${defaultColors.dark} ${360 - transitionAngle}deg, ${defaultColors.light} 360deg
   `;
 
-  return <div className="clef-default-circle" style={{ background: defaultCircleGradient }} />;
+  return (
+    <div
+      className="clef-default-circle"
+      style={{ background: defaultCircleGradient, transform: `rotate(-${angle}deg)` }}
+    />
+  );
 };
 
 export { DefaultCircle };

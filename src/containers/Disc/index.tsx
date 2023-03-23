@@ -72,6 +72,7 @@ const Disc: FC<Props> = ({
       isAnimate={isAnimate}
       borderColor={borderColor}
       size={size}
+      optimized={onImageReady === undefined}
       onRendered={handleRendered}
     />
   );

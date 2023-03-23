@@ -4,7 +4,7 @@ import p5Types from 'p5';
 
 import { SongColor } from '../../../shared/types';
 import { conicalGradient } from '../utils';
-import { songColors } from '../constants';
+import { songColors, transitionAngle } from '../constants';
 import './gradientCircle.css';
 
 interface Props {
@@ -22,7 +22,6 @@ const GradientCircle: FC<Props> = ({ colors, onRendered }) => {
     const density = 1000;
     const radius = size / 2;
     const fromAngle = -163;
-    const transitionAngle = 4;
 
     p5.createCanvas(size, size).parent(canvasParentRef);
     p5.angleMode(p5.DEGREES);

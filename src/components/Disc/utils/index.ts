@@ -1,6 +1,9 @@
 import p5Types from 'p5';
 import chroma from 'chroma-js';
 
+import { SongColor } from '../../../shared/types';
+import { songColors, transitionAngle } from '../constants';
+
 export const mapColors = (p5: p5Types, value: number, min: number, max: number, colors: string[]) => {
   const gradient = chroma.scale([...colors]).mode('rgb');
   const mixture = p5.map(value, min, max, 0, 1);
@@ -28,3 +31,14 @@ export const conicalGradient = (
     p5.line(0, 0, point.x, point.y);
   }
 };
+
+export const getOneColorGradient = (color: SongColor) => `
+  ${songColors[color].light}, ${songColors[color].dark} ${360 - transitionAngle}deg, ${songColors[color].light} 360deg
+`;
+
+export const getMultiColorGradient = (colors: SongColor[]) => `
+  ${songColors[colors[0]].light},
+  ${colors.slice(1, colors.length - 2).map((color) => songColors[color].middle)},
+  ${songColors[colors[colors.length - 1]].dark} ${360 - transitionAngle}deg,
+  ${songColors[colors[0]].light} 360deg
+`;
