@@ -21,6 +21,15 @@
   animation: rotate 2s infinite linear;
 }
 
+.clef-disc_size_small {
+  width: 28px;
+  min-width: 28px;
+  max-width: 28px;
+  height: 28px;
+  min-height: 28px;
+  max-height: 28px;
+}
+
 .clef-disc__ref-container {
   position: absolute;
   top: 0;

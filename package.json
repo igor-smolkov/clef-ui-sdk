@@ -55,6 +55,8 @@
     "@storybook/addon-info": "^5.3.21",
     "@storybook/addon-links": "^6.5.14",
     "@storybook/addons": "^6.5.14",
+    "@storybook/builder-webpack5": "^6.5.16",
+    "@storybook/manager-webpack5": "^6.5.16",
     "@storybook/react": "^6.5.14",
     "@types/chroma-js": "^2.1.4",
     "@types/react": "^18.0.25",
