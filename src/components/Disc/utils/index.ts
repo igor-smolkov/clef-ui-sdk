@@ -38,7 +38,7 @@ export const getOneColorGradient = (color: SongColor) => `
 
 export const getMultiColorGradient = (colors: SongColor[]) => `
   ${songColors[colors[0]].light},
-  ${colors.slice(1, colors.length - 2).map((color) => songColors[color].middle)},
+  ${colors.slice(1, colors.length - 2).map(color => songColors[color].middle)},
   ${songColors[colors[colors.length - 1]].dark} ${360 - transitionAngle}deg,
   ${songColors[colors[0]].light} 360deg
 `;

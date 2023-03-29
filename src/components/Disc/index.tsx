@@ -27,7 +27,7 @@ const Disc = forwardRef<HTMLDivElement, Props>(
       borderColor = '',
       size = 'normal-responsive',
       optimized = false,
-      onRendered,
+      onRendered
     },
     ref
   ) => {

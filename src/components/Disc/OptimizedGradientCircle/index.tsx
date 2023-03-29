@@ -12,7 +12,7 @@ type Props = {
 
 const OptimizedGradientCircle: FC<Props> = ({ colors, angle }) => {
   const gradient = `conic-gradient(from ${angle - angleOffset}deg, ${
-    colors.find((color) => color !== colors[0]) !== undefined
+    colors.find(color => color !== colors[0]) !== undefined
       ? getMultiColorGradient(colors)
       : getOneColorGradient(colors[0])
   })`;
