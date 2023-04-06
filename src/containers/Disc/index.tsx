@@ -10,7 +10,7 @@ type Props = {
   isAnimate?: boolean;
   borderColor?: string;
   colors?: SongColor[] | null;
-  size?: 'small' | 'normal-responsive';
+  size?: 'small-responsive' | 'normal-responsive';
   onImageReady?: (image: string) => void;
 };
 

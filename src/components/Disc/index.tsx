@@ -14,7 +14,7 @@ type Props = {
   colors?: SongColor[];
   isAnimate?: boolean;
   borderColor?: string;
-  size?: 'small' | 'normal-responsive';
+  size?: 'small-responsive' | 'normal-responsive';
   optimized?: boolean;
   onRendered?: () => void;
 };
@@ -43,7 +43,12 @@ const Disc = forwardRef<HTMLDivElement, Props>(
     const gradientCircleFallbackRender = useCallback(() => <DefaultCircle angle={angle} />, [angle]);
 
     return (
-      <div className={cn('clef-disc', { 'clef-disc_animate': isAnimate, 'clef-disc_size_small': size === 'small' })}>
+      <div
+        className={cn('clef-disc', {
+          'clef-disc_animate': isAnimate,
+          'clef-disc_size_small-responsive': size === 'small-responsive'
+        })}
+      >
         <div ref={ref} className="clef-disc__ref-container">
           <div className="clef-disc__draw-container" style={{ transform: `rotate(${angle}deg)` }}>
             {colors === undefined ? (

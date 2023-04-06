@@ -31,7 +31,7 @@ const Foo = () => {
 - isAnimate - enable rotation (optional)  
 - borderColor - disc border color (optional, no border by default)  
 - colors - pass array of [COLORS](https://github.com/automainint/clef#sdk) or get colors from asset if `null` or `undefined` (optional, `null` by default)  
-- size - `small`: 28px, `normal-responsive`: 92px - 240px (`normal-responsive` by default)  
+- size - `small-responsive`: 28px - 34px, `normal-responsive`: 92px - 240px (`normal-responsive` by default)  
 - onImageReady - callback, if passed, returns the base64 png image in the `image` parameter (optional, not converted by default)  
 
 ```ts
@@ -40,12 +40,10 @@ type Props = {
   isAnimate?: boolean;
   borderColor?: string;
   colors?: SongColor[] | null;
-  size?: 'small' | 'normal-responsive';
+  size?: 'small-responsive' | 'normal-responsive';
   onImageReady?: (image: string) => void;
 };
 ```
-  
-Disk size responsive from 96px to 240px  
   
 ## SDK
 
